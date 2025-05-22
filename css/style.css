@@ -1,9 +1,18 @@
+:root{
+      --text-color:     #212121;
+      --green:          #09A494;
+      --bg-color:       #FFFFFF;
+}
+
 body {
       font-family: "Open Sans", "Arial", sans-serif;
       font-weight: 400;
       font-size: 20px;
       line-height: 150%;
       letter-spacing: 0%;
+
+      color: var(--text-color);
+      background-color: var(--bg-color);
 }
 
 h1 {
@@ -31,6 +40,17 @@ a {
       line-height: 100%;
       letter-spacing: 0%;
 
+}
+
+footer {
+      font-family: "Open Sans", "Arial", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      
+      color: var(--bg-color);
+      background-color: var(--text-color);
 }
 
 .subtitle {
