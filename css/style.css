@@ -74,3 +74,22 @@ footer {
       margin:     0 auto;
       padding:    0 20px;
 }
+
+.main-nav a{
+      display: inline-block;
+      text-decoration: none;
+      
+      gap: 10px;
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+
+      color: var(--text-color);
+
+}
+
+.main-nav a:hover{
+      color: var(--green);
+
+}
