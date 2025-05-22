@@ -32,3 +32,28 @@ a {
       letter-spacing: 0%;
 
 }
+
+.subtitle {
+      font-family: "Open Sans", "Arial", sans-serif;
+      font-family: Open Sans;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 120%;
+      letter-spacing: 0%;
+}
+
+h1 {
+      font-family: "Open Sans", "Arial", sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1.1;
+      letter-spacing: 0%;
+}
+
+h1 {
+      font-family: "Open Sans", "Arial", sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1.1;
+      letter-spacing: 0%;
+}
