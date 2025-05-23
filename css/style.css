@@ -127,6 +127,54 @@ footer {
 
 }
 
+.skill-list {
+      margin:           0px;
+      padding:          0px;
+      line-height:      100%;
+}
+
+.skill-list dt {
+      margin-bottom:    6px;
+      padding:          5px 0 5px 38px;
+      background-position:    left;
+      background-repeat:      no-repeat;
+      background-size:  30px;
+}
+
+.skill-level {
+      margin:           4px 0 20px;
+      padding:          2px;
+      font-size:        0;
+      border:           1px solid var(--green);
+      border-radius:    16px;
+}
+
+.skill-level div {
+      height:           14px;
+      background-color: var(--green);
+      border-radius:    8px;
+}
+
+.skill-item {
+      text-transform:   lowercase;
+}
+
+.skill-item_c {
+      background-image: url("../img/skills/c.svg");
+}
+
+.skill-item_fpga {
+      background-image: url("../img/skills/fpga.svg");
+}
+
+.skill-item_cpp {
+      background-image: url("../img/skills/c++.svg");
+}
+
+.skill-item_python {
+      background-image: url("../img/skills/python.svg");
+}
+
 .social-list {
       margin:     0px;
       padding:    0px;
