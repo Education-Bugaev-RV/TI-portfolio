@@ -88,6 +88,10 @@ footer {
       background-color: var(--text-color);
 }
 
+.main-photo {
+      border-radius: 50%;
+}
+
 .subtitle {
       font-family: "Open Sans", "Arial", sans-serif;
       font-family: Open Sans;
