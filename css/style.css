@@ -122,3 +122,15 @@ footer {
       color: var(--green);
 
 }
+
+.social-list {
+      margin:     0px;
+      padding:    0px;
+      list-style-type:  none;
+}
+
+.social-list-link{
+      display:    inline-block;
+      margin:     0px;
+      padding:    0px;
+}
