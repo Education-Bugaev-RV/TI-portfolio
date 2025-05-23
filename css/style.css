@@ -97,6 +97,8 @@ footer {
       font-size:        38px;
       line-height:      120%;
       letter-spacing:   0%;
+
+      color:            var(--green);
 }
 
 .container {
