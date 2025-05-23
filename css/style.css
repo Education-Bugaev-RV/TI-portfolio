@@ -166,6 +166,44 @@ footer {
       background-position-x: 100%;
 }
 
+.contact-list {
+      margin:     0px;
+      padding:    0px;
+      list-style-type:  none;
+}
+
+.contact-list li {
+      display:    inline-block;
+      margin:     0px;
+      padding:    0px;
+}
+
+.contact-list-link {
+      display:          block;
+      text-decoration:  none;
+      color:            var(--text-color);
+
+
+      padding-left:     42px;
+      padding-top:      5px;
+      padding-bottom:   5px;
+
+}
+
+.contact-list-link_mail {
+      background-image:       url(../img/ContactsIcon-1.svg);
+      background-repeat:      no-repeat;
+}
+
+.contact-list-link_phone {
+      background-image:       url(../img/ContactsIcon.svg);
+      background-repeat:      no-repeat;
+}
+
+.contact-list-link:hover {
+      color:      var(--green);
+}
+
 .visually-hidden {
       position:         absolute;
       width:            1px;
