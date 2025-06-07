@@ -273,8 +273,9 @@ footer {
 .main-header {
       display: flex;
       padding-top: 60px;
+      padding-bottom: 120px;
       gap: 40px;
-      align-items: center;    
+      align-items: center;
 }
 
 .main-nav{
@@ -324,4 +325,9 @@ p:last-child {
 .main-footer {
       padding-top: 50px;
       padding-bottom: 50px;
+}
+
+main section{
+      margin: 0px;
+      margin-bottom: 120px;
 }
