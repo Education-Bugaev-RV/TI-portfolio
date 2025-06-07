@@ -304,3 +304,22 @@ p {
 p:last-child {
       margin-bottom: 0;
 }
+
+.container-skills-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin: 0px;
+      margin-bottom: 40px
+}
+
+.container-skills-header *{
+      margin: 0px;
+}
+
+.container-skills-header-btns {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+}
