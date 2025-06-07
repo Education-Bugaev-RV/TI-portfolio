@@ -180,15 +180,11 @@ footer {
 }
 
 .social-list {
+      display: flex;
       margin: 0px;
       padding: 0px;
+      gap: 20px;
       list-style-type: none;
-}
-
-.social-list li {
-      display: inline-block;
-      margin: 0px;
-      padding: 0px;
 }
 
 .social-list-link {
@@ -223,15 +219,16 @@ footer {
 }
 
 .contact-list {
+      display: flex;
+
       margin: 0px;
+      margin-bottom: 40px;
+
       padding: 0px;
       list-style-type: none;
-}
 
-.contact-list li {
-      display: inline-block;
-      margin: 0px;
-      padding: 0px;
+      gap: 40px;
+
 }
 
 .contact-list-link {
