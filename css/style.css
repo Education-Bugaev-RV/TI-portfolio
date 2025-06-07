@@ -1,21 +1,21 @@
 *,
 *::before,
-*::after{
+*::after {
       box-sizing: border-box;
 }
 
-:root{
-      --text-color:     #212121;
-      --green:          #09A494;
-      --bg-color:       #FFFFFF;
+:root {
+      --text-color: #212121;
+      --green: #09A494;
+      --bg-color: #FFFFFF;
 }
 
 body {
       font-family: "Open Sans", "Arial", sans-serif;
-      font-weight:      400;
-      font-size:        20px;
-      line-height:      150%;
-      letter-spacing:   0%;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0%;
 
       color: var(--text-color);
       background-color: var(--bg-color);
@@ -23,140 +23,140 @@ body {
 
 h1 {
       font-family: "Open Sans", "Arial", sans-serif;
-      font-weight:      700;
-      font-size:        60px;
-      line-height:      110%;
-      letter-spacing:   0%;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 110%;
+      letter-spacing: 0%;
 }
 
 h2 {
       font-family: "Open Sans", "Arial", sans-serif;
-      font-weight:      700;
-      font-size:        30px;
-      line-height:      120%;
-      letter-spacing:   0%;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 120%;
+      letter-spacing: 0%;
 
 }
 
 button {
-      padding:    0;
-      border:     none;
-      color:      inherit;
-      cursor:     pointer;
+      padding: 0;
+      border: none;
+      color: inherit;
+      cursor: pointer;
       background-color: transparent;
-      text-transform:   lowercase;
-      
-      border-width:     1px;
-      border-radius:    8px;
-      border-style:     solid;
-      border-color:     var(--green);
-      
-      padding-top:      6px;
-      padding-right:    10px;
-      padding-bottom:   10px;
-      padding-left:     10px;
-      
-      gap:  10px;
+      text-transform: lowercase;
 
-      color:            var(--green);
+      border-width: 1px;
+      border-radius: 8px;
+      border-style: solid;
+      border-color: var(--green);
+
+      padding-top: 6px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+
+      gap: 10px;
+
+      color: var(--green);
       background-color: var(--bg-color);
 }
 
 button:hover {
-      color:            var(--bg-color);
+      color: var(--bg-color);
       background-color: var(--green);
 }
 
 button,
 a {
-      font-family:      "Open Sans", "Arial", sans-serif;
-      font-weight:      400;
-      font-size:        20px;
-      line-height:      100%;
-      letter-spacing:   0%;
+      font-family: "Open Sans", "Arial", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      letter-spacing: 0%;
 
 }
 
 footer {
-      font-family:      "Open Sans", "Arial", sans-serif;
-      font-weight:      400;
-      font-size:        20px;
-      line-height:      150%;
-      letter-spacing:   0%;
-      
-      color:            var(--bg-color);
+      font-family: "Open Sans", "Arial", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0%;
+
+      color: var(--bg-color);
       background-color: var(--text-color);
 }
 
 .main-photo {
-      border-radius:    50%;
+      border-radius: 50%;
 }
 
 .subtitle {
-      font-weight:      400;
-      font-size:        38px;
-      line-height:      120%;
-      letter-spacing:   0%;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 120%;
+      letter-spacing: 0%;
 
-      color:            var(--green);
+      color: var(--green);
 }
 
 .container {
-      min-width:  320px;
-      max-width:  1280px;
-      margin:     0 auto;
-      padding:    0 20px;
+      min-width: 320px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
 }
 
-.main-nav a{
-      display:          inline-block;
-      text-decoration:  none;
-      
-      gap:              10px;
-      padding-top:      10px;
-      padding-right:    15px;
-      padding-bottom:   10px;
-      padding-left:     15px;
+.main-nav a {
+      display: inline-block;
+      text-decoration: none;
 
-      color:            var(--text-color);
+      gap: 10px;
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+
+      color: var(--text-color);
 
 }
 
-.main-nav a:hover{
+.main-nav a:hover {
       color: var(--green);
 
 }
 
 .skill-list {
-      margin:           0px;
-      padding:          0px;
-      line-height:      100%;
+      margin: 0px;
+      padding: 0px;
+      line-height: 100%;
 }
 
 .skill-list dt {
-      margin-bottom:          6px;
-      padding:                5px 0 5px 38px;
-      background-position:    left;
-      background-repeat:      no-repeat;
-      background-size:        30px;
+      margin-bottom: 6px;
+      padding: 5px 0 5px 38px;
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: 30px;
 }
 
 .skill-level {
-      margin:           4px 0 20px;
-      padding:          2px;
-      font-size:        0;
-      border:           1px solid var(--green);
-      border-radius:    16px;
+      margin: 4px 0 20px;
+      padding: 2px;
+      font-size: 0;
+      border: 1px solid var(--green);
+      border-radius: 16px;
 }
 
 .skill-level div {
-      height:           14px;
+      height: 14px;
       background-color: var(--green);
-      border-radius:    8px;
+      border-radius: 8px;
 }
 
 .skill-item {
-      text-transform:   lowercase;
+      text-transform: lowercase;
 }
 
 .skill-item_c {
@@ -176,27 +176,27 @@ footer {
 }
 
 .social-list {
-      margin:           0px;
-      padding:          0px;
-      list-style-type:  none;
+      margin: 0px;
+      padding: 0px;
+      list-style-type: none;
 }
 
 .social-list li {
-      display:    inline-block;
-      margin:     0px;
-      padding:    0px;
+      display: inline-block;
+      margin: 0px;
+      padding: 0px;
 }
 
-.social-list-link{
+.social-list-link {
       display: block;
 
-      width:      50px;
-      height:     50px;
-      gap:        10px;
+      width: 50px;
+      height: 50px;
+      gap: 10px;
 
-      border-radius:    50%;
-      border-width:     1px;
-      border-color:     var(--green);
+      border-radius: 50%;
+      border-width: 1px;
+      border-color: var(--green);
       background-color: var(--bg-color);
 }
 
@@ -205,66 +205,66 @@ footer {
 }
 
 .social-list-link_github {
-      background-image:       url(../img/contacts-list.svg);
+      background-image: url(../img/contacts-list.svg);
 }
 
 .social-list-link_telegram {
-      background-image:       url(../img/contacts-list.svg);
-      background-position-x:  75%;
+      background-image: url(../img/contacts-list.svg);
+      background-position-x: 75%;
 }
 
 .social-list-link_vk {
-      background-image:       url(../img/contacts-list.svg);
-      background-position-x:  100%;
+      background-image: url(../img/contacts-list.svg);
+      background-position-x: 100%;
 }
 
 .contact-list {
-      margin:           0px;
-      padding:          0px;
-      list-style-type:  none;
+      margin: 0px;
+      padding: 0px;
+      list-style-type: none;
 }
 
 .contact-list li {
-      display:    inline-block;
-      margin:     0px;
-      padding:    0px;
+      display: inline-block;
+      margin: 0px;
+      padding: 0px;
 }
 
 .contact-list-link {
-      display:          block;
-      text-decoration:  none;
-      color:            var(--text-color);
+      display: block;
+      text-decoration: none;
+      color: var(--text-color);
 
 
-      padding-left:     42px;
-      padding-top:      5px;
-      padding-bottom:   5px;
+      padding-left: 42px;
+      padding-top: 5px;
+      padding-bottom: 5px;
 
 }
 
 .contact-list-link_mail {
-      background-image:       url(../img/ContactsIcon-1.svg);
-      background-repeat:      no-repeat;
+      background-image: url(../img/ContactsIcon-1.svg);
+      background-repeat: no-repeat;
 }
 
 .contact-list-link_phone {
-      background-image:       url(../img/ContactsIcon.svg);
-      background-repeat:      no-repeat;
+      background-image: url(../img/ContactsIcon.svg);
+      background-repeat: no-repeat;
 }
 
 .contact-list-link:hover {
-      color:      var(--green);
+      color: var(--green);
 }
 
 .visually-hidden {
-      position:         absolute;
-      width:            1px;
-      height:           1px;
-      margin:           -1px;
-      border:           0;
-      padding:          0;
-      white-space:      nowrap;
-      clip-path:        inset(100%);
-      clip:             rect(0 0 0 0);
-      overflow:         hidden;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
 }
