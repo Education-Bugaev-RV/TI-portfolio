@@ -320,3 +320,8 @@ p:last-child {
       gap: 20px;
       align-items: center;
 }
+
+.main-footer {
+      padding-top: 50px;
+      padding-bottom: 50px;
+}
