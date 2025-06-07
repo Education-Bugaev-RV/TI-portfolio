@@ -109,7 +109,6 @@ footer {
 }
 
 .main-nav a {
-      display: inline-block;
       text-decoration: none;
 
       gap: 10px;
@@ -267,4 +266,15 @@ footer {
       clip-path: inset(100%);
       clip: rect(0 0 0 0);
       overflow: hidden;
+}
+
+.main-header {
+      display: flex;
+      padding-top: 60px;
+      gap: 40px;
+      align-items: center;    
+}
+
+.main-nav{
+      display: flex;
 }
