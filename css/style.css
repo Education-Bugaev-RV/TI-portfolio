@@ -313,6 +313,8 @@ p:last-child {
 
 .container-skills-header {
       display: flex;
+      flex-wrap: wrap;
+      row-gap: 20px;
       align-items: center;
       justify-content: space-between;
 
