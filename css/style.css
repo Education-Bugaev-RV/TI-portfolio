@@ -281,7 +281,7 @@ footer {
 .main-header {
       display: flex;
       padding-top: 60px;
-      padding-bottom: 120px;
+      margin-bottom: 120px;
       gap: 40px;
       align-items: center;
 }
