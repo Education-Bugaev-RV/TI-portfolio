@@ -243,10 +243,11 @@ footer {
       text-decoration: none;
       color: var(--text-color);
 
+      align-content: center;
+      height: 30px;
 
+      padding: 0px;
       padding-left: 42px;
-      padding-top: 5px;
-      padding-bottom: 5px;
 
 }
 
