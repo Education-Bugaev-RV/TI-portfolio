@@ -167,7 +167,7 @@ footer {
 }
 
 .skill-item {
-      text-transform: lowercase;
+      text-transform: capitalize;
 }
 
 .skill-item_c {
