@@ -170,22 +170,6 @@ footer {
       text-transform: capitalize;
 }
 
-.skill-item_c {
-      background-image: url("../img/skills/c.svg");
-}
-
-.skill-item_fpga {
-      background-image: url("../img/skills/fpga.svg");
-}
-
-.skill-item_cpp {
-      background-image: url("../img/skills/c++.svg");
-}
-
-.skill-item_python {
-      background-image: url("../img/skills/python.svg");
-}
-
 .social-list {
       display: flex;
       margin: 0px;
