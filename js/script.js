@@ -1,28 +1,26 @@
 'use strict';
 
-function SkillData(name , level, cssClass, icon){
+function SkillData(name , level, icon){
     this.name = name;
     this.level = level;
-    this.cssClass = cssClass;
     this.iconName = icon;
 }
 
 const skills = {
-    'data' : [
-        new SkillData('Си', 80, 'skill-item_c', 'c.svg'),
-        new SkillData('С++', 50, 'skill-item_cpp', 'c++.svg'),
-        new SkillData('FPGA', 60, 'skill-item_fpga', 'fpga.svg'),
-        new SkillData('Python', 50, 'skill-item_python', 'python.svg'),
+    data : [
+        new SkillData('Си', 80, 'c.svg'),
+        new SkillData('С++', 50, 'c++.svg'),
+        new SkillData('FPGA', 60, 'fpga.svg'),
+        new SkillData('Python', 50, 'python.svg'),
     ],
-    'generateList': function(skillList) {
-        this.data.forEach(item => {
 
+    generateList : function(skillList) {
+        this.data.forEach(item => {
             const dd = document.createElement('dd');
             const dt = document.createElement('dt');
             const div = document.createElement('div');
 
             dt.classList.add('skill-item');
-            dt.classList.add(item.cssClass);
             dd.classList.add('skill-level');
 
             dt.innerText = item.name;
@@ -32,9 +30,7 @@ const skills = {
 
             dd.append(div);
 
-            skillList.append(dt);
-            skillList.append(dd);
-
+            skillList.append(dt, dd);
         });
     }
 }
