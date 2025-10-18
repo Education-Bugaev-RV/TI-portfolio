@@ -1,5 +1,7 @@
 'use strict';
 
+//--------_skills_---------
+
 function SkillData(name, level, icon) {
     this.name = name;
     this.level = level;
@@ -89,4 +91,37 @@ sortBtnsBlock.addEventListener('click', (e) => {
     }
 })
 
+//--------_menu_---------
 
+const menu = {
+    nav: document.querySelector('.main-nav'),
+    navBtn: document.querySelector('.nav-btn'),
+
+    close: function () {
+        this.nav.classList.add('main-nav_closed');
+
+        this.navBtn.classList.remove('nav-btn_close');
+        this.navBtn.classList.add('nav-btn_open');
+
+        this.navBtn.children[0].innerText = 'Открыть меню'
+    },
+
+    open: function () {
+        this.nav.classList.remove('main-nav_closed');
+
+        this.navBtn.classList.remove('nav-btn_open');
+        this.navBtn.classList.add('nav-btn_close');
+
+        this.navBtn.children[0].innerText = 'Закрыть меню'
+    }
+}
+
+menu.navBtn.addEventListener('click', (e) => {
+    if (e.target.classList.contains('nav-btn_open')) {
+        menu.open();
+    } else {
+        menu.close();
+    }
+})
+
+menu.close();
