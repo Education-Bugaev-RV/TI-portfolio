@@ -1,20 +1,36 @@
 'use strict';
 
-function SkillData(name , level, icon){
+function SkillData(name, level, icon) {
     this.name = name;
     this.level = level;
     this.iconName = icon;
 }
 
+function GetComparer(prop) {
+    return function (a, b) {
+        if (a[prop] < b[prop]) {
+            return -1;
+        }
+
+        if (a[prop] > b[prop]) {
+            return 1;
+        }
+        return 0;
+    }
+}
+
 const skills = {
-    data : [
+    data: [
         new SkillData('Си', 80, 'c.svg'),
-        new SkillData('С++', 50, 'c++.svg'),
+        new SkillData('C++', 50, 'c++.svg'),
         new SkillData('FPGA', 60, 'fpga.svg'),
         new SkillData('Python', 50, 'python.svg'),
     ],
 
-    generateList : function(skillList) {
+    sortMode: null,
+
+    generateList: function (skillList) {
+        skillList.innerHTML = '';
         this.data.forEach(item => {
             const dd = document.createElement('dd');
             const dt = document.createElement('dt');
@@ -32,9 +48,45 @@ const skills = {
 
             skillList.append(dt, dd);
         });
+    },
+
+    sortByProp: function (prop) {
+        if (this.sortMode != prop) {
+            this.sortMode = prop;
+            this.data.sort(GetComparer(prop));
+            console.log(`Отсортировано по ${prop}:`, this.data);
+        }
+        else {
+            this.data.reverse();
+            console.log('Инвертировали порядок сортировки:', this.data);
+        }
+
+        this.generateList(skillList);
     }
 }
 
 const skillList = document.querySelector('.skill-list')
 
 skills.generateList(skillList);
+
+const sortBtnsBlock = document.querySelector('.container-skills-header-btns');
+
+sortBtnsBlock.addEventListener('click', (e) => {
+    const target = e.target;
+
+    if (target.nodeName != 'BUTTON')
+        return;
+
+    switch (target.dataset.type) {
+        case 'name':
+        case 'level':
+            skills.sortByProp(target.dataset.type);
+            break;
+
+        default:
+            console.error('Неизвестная кнопка');
+            break;
+    }
+})
+
+
