@@ -105,6 +105,10 @@ footer {
       background-color: var(--text-color);
 }
 
+.dark-theme footer{
+      background-color: var(--green);
+}
+
 .main-photo {
       border-radius: 50%;
 }
