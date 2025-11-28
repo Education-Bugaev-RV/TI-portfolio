@@ -129,17 +129,23 @@ menu.close();
 
 //--------_theme-switcher_---------
 
-const themeSwitchChB = document.querySelector(".switch-checkbox")
-const darkThemeClassName = "dark-theme"
+const themeSwitcher = {
+    checkboxSelector: '.switch-checkbox',
+    darkClass: 'dark-theme',
 
-function themeSwitchChange(e){
-    if (e.target.checked){
-        document.body.classList.remove(darkThemeClassName)
-    } else {
-        document.body.classList.add(darkThemeClassName)
-    }
-    console.log(e.target.checked);
-}
+    init: function () {
+        this.checkbox = document.querySelector(this.checkboxSelector);
+        if (!this.checkbox) return;
+        this.checkbox.addEventListener('change', this.onChange.bind(this));
+    },
 
+    onChange: function (e) {
+        if (e.target.checked) {
+            document.body.classList.remove(this.darkClass);
+        } else {
+            document.body.classList.add(this.darkClass);
+        }
+    },
+};
 
-themeSwitchChB.addEventListener('change', themeSwitchChange)
+themeSwitcher.init();
