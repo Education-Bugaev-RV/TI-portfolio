@@ -133,14 +133,42 @@ const themeSwitcher = {
     checkboxSelector: '.switch-checkbox',
     darkClass: 'dark-theme',
 
+    storageKey: 'lightThemeOn',
+
     init: function () {
         this.checkbox = document.querySelector(this.checkboxSelector);
         if (!this.checkbox) return;
+
+        const stored = localStorage.getItem(this.storageKey);
+        let isChecked;
+        if (stored == 1) isChecked = true;
+        else if (stored == 0) isChecked = false;
+        else isChecked = this.checkbox.checked;
+
+        this.checkbox.checked = isChecked;
+        this.apply(isChecked);
+
+        /*
+            Метод bind возвращает новую функцию, у которой контекст this внутри 
+            onChange жёстко привязан к текущему объекту (обычно — экземпляру класса), 
+            поэтому внутри onChange можно безопасно обращаться к свойствам/методам 
+            экземпляра (а не к элементу или undefined)
+        */
         this.checkbox.addEventListener('change', this.onChange.bind(this));
     },
 
     onChange: function (e) {
-        if (e.target.checked) {
+        const checked = e.target.checked;
+        this.apply(checked);
+        try {
+            localStorage.setItem(this.storageKey, checked ? 1 : 0);
+        } catch (err) {
+            // localStorage может быть недоступен в некоторых окружениях — игнорируем
+        }
+    },
+
+    apply: function (isChecked) {
+        if (isChecked) {
             document.body.classList.remove(this.darkClass);
         } else {
             document.body.classList.add(this.darkClass);
