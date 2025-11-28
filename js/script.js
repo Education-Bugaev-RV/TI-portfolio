@@ -125,3 +125,21 @@ menu.navBtn.addEventListener('click', (e) => {
 })
 
 menu.close();
+
+
+//--------_theme-switcher_---------
+
+const themeSwitchChB = document.querySelector(".switch-checkbox")
+const darkThemeClassName = "dark-theme"
+
+function themeSwitchChange(e){
+    if (e.target.checked){
+        document.body.classList.remove(darkThemeClassName)
+    } else {
+        document.body.classList.add(darkThemeClassName)
+    }
+    console.log(e.target.checked);
+}
+
+
+themeSwitchChB.addEventListener('change', themeSwitchChange)
