@@ -25,13 +25,64 @@ const skills = {
     data: [],
 
     sortMode: null,
+    lastUrl: null,
 
     getData: function(url) {
+        this.lastUrl = url;
         fetch(url)
-            .then(data => data.json())
-            .then(object => this.data = object)
-            .then(() => this.generateList(skillList))
-            .catch(error => console.error(error));
+            .then(data => {
+                if (!data.ok) throw new Error(`HTTP error ${data.status}`);
+                return data.json();
+            })
+            .then(object => {
+                this.data = object;
+                this.clearErrorState();
+                this.generateList(skillList);
+            })
+            .catch(error => this.handleError(error));
+    },
+
+    handleError: function (err) {
+        console.error('Ошибка получения данных навыков:', err);
+
+        // убираем предыдущие сообщения об ошибке, если есть
+        this.clearErrorState();
+
+        const msg = document.createElement('div');
+        const msgP = document.createElement('p');
+
+        msg.classList.add('text-wrapper');
+        msgP.innerText = 'Данные не получены! \n Проверьте подключение и нажмите "повторить".';
+        msg.append(msgP);
+
+        const retryBtn = document.createElement('button');
+        retryBtn.type = 'button';
+        retryBtn.classList.add('button-common');
+        retryBtn.innerText = 'Повторить';
+        retryBtn.addEventListener('click', () => {
+            this.getData(this.lastUrl);
+        });
+
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('skills-error-wrapper');
+        wrapper.append(msg, retryBtn);
+
+        // вставляем вместо списка
+        skillList.insertAdjacentElement('afterend', wrapper);
+
+        // отключаем отображение кнопок сортировки
+        const sortBtns = document.querySelector('.container-skills-header-btns');
+        sortBtns.classList.add('visually-hidden');
+    },
+
+    clearErrorState: function () {
+       
+        const old = skillList.parentElement.querySelector('.skills-error-wrapper');
+        if (old) old.remove();
+
+        // включаем отображение кнопок сортировки
+        const sortBtns = document.querySelector('.container-skills-header-btns');
+        sortBtns.classList.remove('visually-hidden');
     },
 
     generateList: function (skillList) {
