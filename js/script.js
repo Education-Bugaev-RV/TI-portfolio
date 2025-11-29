@@ -22,12 +22,7 @@ function GetComparer(prop) {
 }
 
 const skills = {
-    data: [
-        new SkillData('Си', 80, 'c.svg'),
-        new SkillData('C++', 50, 'c++.svg'),
-        new SkillData('FPGA', 60, 'fpga.svg'),
-        new SkillData('Python', 50, 'python.svg'),
-    ],
+    data: [],
 
     sortMode: null,
 

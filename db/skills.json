@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Си",
+        "level": 80,
+        "iconName": "c.svg"
+    },
+    {
+        "name": "C++",
+        "level": 50,
+        "iconName": "c++.svg"
+    },
+    {
+        "name": "FPGA",
+        "level": 60,
+        "iconName": "fpga.svg"
+    },
+    {
+        "name": "Python",
+        "level": 50,
+        "iconName": "python.svg"
+    }
+]
