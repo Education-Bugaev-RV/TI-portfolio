@@ -26,6 +26,14 @@ const skills = {
 
     sortMode: null,
 
+    getData: function(url) {
+        fetch(url)
+            .then(data => data.json())
+            .then(object => this.data = object)
+            .then(() => this.generateList(skillList))
+            .catch(error => console.error(error));
+    },
+
     generateList: function (skillList) {
         skillList.innerHTML = '';
         this.data.forEach(item => {
@@ -62,9 +70,9 @@ const skills = {
     }
 }
 
-const skillList = document.querySelector('.skill-list')
+const skillList = document.querySelector('.skill-list');
 
-skills.generateList(skillList);
+skills.getData('db/skills.json');
 
 const sortBtnsBlock = document.querySelector('.container-skills-header-btns');
 
