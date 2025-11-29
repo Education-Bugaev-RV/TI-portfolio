@@ -110,11 +110,9 @@ const skills = {
         if (this.sortMode != prop) {
             this.sortMode = prop;
             this.data.sort(GetComparer(prop));
-            console.log(`Отсортировано по ${prop}:`, this.data);
         }
         else {
             this.data.reverse();
-            console.log('Инвертировали порядок сортировки:', this.data);
         }
 
         this.generateList(skillList);
