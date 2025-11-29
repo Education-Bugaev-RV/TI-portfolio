@@ -7,6 +7,7 @@
 :root {
       --text-color: #212121;
       --green: #09A494;
+      --warn_orange: #d56d00;
       --bg-color: #FFFFFF;
 }
 
@@ -82,6 +83,20 @@ button {
 .button-common:hover {
       color: var(--bg-color);
       background-color: var(--green);
+}
+
+.skills-error-wrapper .button-common {
+      color: var(--warn_orange);
+      border-color: var(--warn_orange);
+}
+
+.skills-error-wrapper .button-common:hover {
+      color: var(--bg-color);
+      background-color: var(--warn_orange);
+}
+
+.skills-error-wrapper .text-wrapper {
+      margin-bottom: 10px;
 }
 
 button,
@@ -177,6 +192,14 @@ footer {
 
 .skill-item {
       text-transform: capitalize;
+}
+.skills-error-wrapper {
+
+      padding: 10px;
+      border-radius: 8px;
+      border-style: solid;
+      border-color: var(--warn_orange);
+      color: var(--warn_orange);
 }
 
 .social-list {
