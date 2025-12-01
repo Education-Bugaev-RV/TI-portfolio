@@ -206,7 +206,7 @@ const themeSwitcher = {
                 break;
         }
         this.checkbox.checked = isChecked;
-        this.apply(isChecked);
+        this.changeBodyThemeClass(isChecked);
 
         /*
             Метод bind возвращает новую функцию, у которой контекст this внутри 
@@ -219,7 +219,7 @@ const themeSwitcher = {
 
     onChange: function (e) {
         const checked = e.target.checked;
-        this.apply(checked);
+        this.changeBodyThemeClass(checked);
         try {
             localStorage.setItem(this.storageKey, checked ? 1 : 0);
         } catch (err) {
@@ -227,8 +227,8 @@ const themeSwitcher = {
         }
     },
 
-    apply: function (isChecked) {
-        if (isChecked) {
+    changeBodyThemeClass: function (isLightTheme) {
+        if (isLightTheme) {
             document.body.classList.remove(this.darkClass);
         } else {
             document.body.classList.add(this.darkClass);
