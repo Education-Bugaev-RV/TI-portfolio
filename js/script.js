@@ -182,12 +182,11 @@ menu.close();
 //--------_theme-switcher_---------
 
 const themeSwitcher = {
-    checkboxSelector: '.switch-checkbox',
-    darkClass: 'dark-theme',
+    init: function (checkboxSelector, darkClass, storageKey) {
+        this.checkboxSelector=checkboxSelector;
+        this.darkClass=darkClass;
+        this.storageKey=storageKey;
 
-    storageKey: 'lightThemeOn',
-
-    init: function () {
         this.checkbox = document.querySelector(this.checkboxSelector);
         if (!this.checkbox) return;
 
@@ -228,4 +227,4 @@ const themeSwitcher = {
     },
 };
 
-themeSwitcher.init();
+themeSwitcher.init('.switch-checkbox', 'dark-theme', 'lightThemeOn');
