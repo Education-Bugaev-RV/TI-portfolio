@@ -192,10 +192,19 @@ const themeSwitcher = {
 
         const stored = localStorage.getItem(this.storageKey);
         let isChecked;
-        if (stored === "1") isChecked = true;
-        else if (stored === "0") isChecked = false;
-        else isChecked = this.checkbox.checked;
-
+        switch (true) {
+            case (stored === "1"):
+                isChecked = true;
+                break;
+            
+            case (stored === "0"):
+                isChecked = false;
+                break;
+        
+            default:
+                isChecked = this.checkbox.checked;
+                break;
+        }
         this.checkbox.checked = isChecked;
         this.apply(isChecked);
 
