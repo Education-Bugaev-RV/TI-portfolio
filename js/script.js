@@ -27,6 +27,11 @@ const skills = {
     sortMode: null,
     lastUrl: null,
 
+    init: function(skillList, sortBtns){
+        this.skillList = skillList;
+        this.sortBtns = sortBtns;
+    },
+
     getData: function(url) {
         this.lastUrl = url;
         fetch(url)
@@ -37,7 +42,7 @@ const skills = {
             .then(object => {
                 this.data = object;
                 this.clearErrorState();
-                this.generateList(skillList);
+                this.generateList();
             })
             .catch(error => this.handleError(error));
     },
@@ -68,25 +73,23 @@ const skills = {
         wrapper.append(msg, retryBtn);
 
         // вставляем вместо списка
-        skillList.insertAdjacentElement('afterend', wrapper);
+        this.skillList.insertAdjacentElement('afterend', wrapper);
 
         // отключаем отображение кнопок сортировки
-        const sortBtns = document.querySelector('.container-skills-header-btns');
-        sortBtns.classList.add('visually-hidden');
+        this.sortBtns.classList.add('visually-hidden');
     },
 
     clearErrorState: function () {
        
-        const old = skillList.parentElement.querySelector('.skills-error-wrapper');
+        const old = this.skillList.parentElement.querySelector('.skills-error-wrapper');
         if (old) old.remove();
 
         // включаем отображение кнопок сортировки
-        const sortBtns = document.querySelector('.container-skills-header-btns');
-        sortBtns.classList.remove('visually-hidden');
+        this.sortBtns.classList.remove('visually-hidden');
     },
 
-    generateList: function (skillList) {
-        skillList.innerHTML = '';
+    generateList: function () {
+        this.skillList.innerHTML = '';
         this.data.forEach(item => {
             const dd = document.createElement('dd');
             const dt = document.createElement('dt');
@@ -102,7 +105,7 @@ const skills = {
 
             dd.append(div);
 
-            skillList.append(dt, dd);
+            this.skillList.append(dt, dd);
         });
     },
 
@@ -115,12 +118,14 @@ const skills = {
             this.data.reverse();
         }
 
-        this.generateList(skillList);
+        this.generateList();
     }
 }
 
 const skillList = document.querySelector('.skill-list');
+const sortBtns = document.querySelector('.container-skills-header-btns');
 
+skills.init(skillList, sortBtns)
 skills.getData('db/skills.json');
 
 const sortBtnsBlock = document.querySelector('.container-skills-header-btns');
