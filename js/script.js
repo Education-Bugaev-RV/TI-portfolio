@@ -26,10 +26,12 @@ const skills = {
 
     sortMode: null,
     lastUrl: null,
-
-    init: function(skillList, sortBtns){
+    
+    init: function(skillList, sortBtns, warnMsg){
         this.skillList = skillList;
         this.sortBtns = sortBtns;
+        this.warnMsg = warnMsg;
+        this.warnMsg.querySelector(".button-common").addEventListener('click', () => { this.getData(this.lastUrl); });
     },
 
     getData: function(url) {
@@ -53,36 +55,15 @@ const skills = {
         // убираем предыдущие сообщения об ошибке, если есть
         this.clearErrorState();
 
-        const msg = document.createElement('div');
-        const msgP = document.createElement('p');
-
-        msg.classList.add('text-wrapper');
-        msgP.innerText = 'Данные не получены! \n Проверьте подключение и нажмите "повторить".';
-        msg.append(msgP);
-
-        const retryBtn = document.createElement('button');
-        retryBtn.type = 'button';
-        retryBtn.classList.add('button-common');
-        retryBtn.innerText = 'Повторить';
-        retryBtn.addEventListener('click', () => {
-            this.getData(this.lastUrl);
-        });
-
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('skills-error-wrapper');
-        wrapper.append(msg, retryBtn);
-
-        // вставляем вместо списка
-        this.skillList.insertAdjacentElement('afterend', wrapper);
+        this.warnMsg.classList.remove('visually-hidden');
 
         // отключаем отображение кнопок сортировки
         this.sortBtns.classList.add('visually-hidden');
     },
 
     clearErrorState: function () {
-       
-        const old = this.skillList.parentElement.querySelector('.skills-error-wrapper');
-        if (old) old.remove();
+        // выключаем отображение окна с предупреждением
+        this.warnMsg.classList.add('visually-hidden');
 
         // включаем отображение кнопок сортировки
         this.sortBtns.classList.remove('visually-hidden');
@@ -124,8 +105,9 @@ const skills = {
 
 const skillList = document.querySelector('.skill-list');
 const sortBtns = document.querySelector('.container-skills-header-btns');
+const warnMsg = document.querySelector(".skills-error-wrapper");
 
-skills.init(skillList, sortBtns)
+skills.init(skillList, sortBtns, warnMsg)
 skills.getData('db/skills.json');
 
 const sortBtnsBlock = document.querySelector('.container-skills-header-btns');
